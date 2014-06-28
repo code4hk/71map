@@ -2,7 +2,7 @@
 
 angular.module('myappApp')
   .controller('MainCtrl', function ($scope, $http) {
-  	$scope.london = {
+  	$scope.center = {
 	    lat: 22.280727,
 	    lng: 114.165079,
 	    zoom: 14
@@ -10,28 +10,35 @@ angular.module('myappApp')
 
     $scope.markerTypes = [
         { "key":"water", "checked": true, "name": "水機"},
-        { "key":"wifi", "checked": true, "name": "Wi-Fi"},
-        { "key":"toilet", "checked": true, "name": "廁所"},
-        { "key":"recycle", "checked": true, "name": "回收桶"}
+        { "key":"wifi", "checked": false, "name": "Wi-Fi"},
+        { "key":"toilet", "checked": false, "name": "廁所"},
+        { "key":"recycle", "checked": false, "name": "回收桶"}
     ];
 
 	$scope.alldata = [];
 	$scope.markers = [];
     var local_icons = {
         'defaultIcon': {},
-        'leafIcon': {
-            iconUrl: 'img/leaf-green.png',
-            shadowUrl: 'img/leaf-shadow.png',
-            iconSize:     [38, 95], // size of the icon
-            shadowSize:   [50, 64], // size of the shadow
-            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-            shadowAnchor: [4, 62],  // the same for the shadow
-            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        'water': {
+            iconUrl: 'images/water.png',
+            iconSize:     [19, 23], // size of the icon            
+            iconAnchor:   [19, 22] // point of the icon which will correspond to marker's location            
         },
-        'redMarker': L.AwesomeMarkers.icon({
-								    icon: 'home',
-								    markerColor: 'red'
-							  	})
+        'wifi': {
+            iconUrl: 'images/wifi.png',
+            iconSize:     [20, 20], // size of the icon            
+            iconAnchor:   [20, 19] // point of the icon which will correspond to marker's location            
+        },
+        'toilet': {
+            iconUrl: 'images/toilet.png',
+            iconSize:     [20, 20], // size of the icon            
+            iconAnchor:   [20, 19] // point of the icon which will correspond to marker's location            
+        },
+        'recycle': {
+            iconUrl: 'images/recycle.png',
+            iconSize:     [20, 20], // size of the icon            
+            iconAnchor:   [20, 19] // point of the icon which will correspond to marker's location            
+        }
     };
     console.log(local_icons);
   	$http.get('https://spreadsheets.google.com/feeds/list/0AgDEdGmA1LoQdHdScTBZUkF5ejJSV3lra0FJVUhxMGc/1/public/values?alt=json')
@@ -49,8 +56,10 @@ angular.module('myappApp')
 						"lat" : templat,
 						"lng" : templng,
 						"type" : rawdata[i].gsx$type.$t,
-						"message" : rawdata[i].gsx$address.$t
+						"message" : rawdata[i].gsx$address.$t,
+                        "icon" : local_icons[rawdata[i].gsx$type.$t]
 					};
+                    
 
 					$scope.alldata.push(tempdata);
 				}
