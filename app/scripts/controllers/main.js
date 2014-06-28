@@ -45,13 +45,7 @@ angular.module('myappApp')
 						"lat" : templat,
 						"lng" : templng,
 						"type" : rawdata[i].gsx$type.$t,
-						"message" : rawdata[i].gsx$address.$t,
-						icon: {
-                            type: 'awesomeMarker',
-                            icon: 'road',
-                            prefix: 'fa',
-                            markerColor: 'red'
-                        }
+						"message" : rawdata[i].gsx$address.$t
 					};
 
 					$scope.alldata.push(tempdata);
