@@ -1,6 +1,10 @@
 <leaflet center="london" layers = "layers" markers="markers" height="400px" width="1200px"></leaflet>
 
-<input type = "checkbox" ng-change = "changed()" ng-model="waterChecked">水機</input>
+<!-- <input type = "checkbox" ng-change = "changed()" ng-model="waterChecked">水機</input>
 <input type = "checkbox" ng-change = "changed()" ng-model="wifiChecked">wifi</input>
 <input type = "checkbox" ng-change = "changed()" ng-model="toiletChecked">廁所</input>
-<input type = "checkbox" ng-change = "changed()" ng-model="recycleChecked">回收桶</input>
+<input type = "checkbox" ng-change = "changed()" ng-model="recycleChecked">回收桶</input> -->
+
+<div ng-repeat = "markerType in markerTypes">
+	<input type = "checkbox" ng-change="changed()" ng-model="markerType.checked">{{markerType.name}}</input>
+</div>

@@ -7,10 +7,14 @@ angular.module('myappApp')
 	    lng: 114.165079,
 	    zoom: 14
   	}
-  	$scope.waterChecked=true;
-  	$scope.wifiChecked=true;
-  	$scope.toiletChecked=true;
-  	$scope.recycleChecked=true;
+
+    $scope.markerTypes = [
+        { "key":"water", "checked": true, "name": "水機"},
+        { "key":"wifi", "checked": true, "name": "Wi-Fi"},
+        { "key":"toilet", "checked": true, "name": "廁所"},
+        { "key":"recycle", "checked": true, "name": "回收桶"}
+    ];
+
 	$scope.alldata = [];
 	$scope.markers = [];
     var local_icons = {
@@ -66,18 +70,9 @@ angular.module('myappApp')
     $scope.changed = function(){
     	$scope.markers = [];
     	for (var i = 0; i < $scope.alldata.length; i++){
-    		if ($scope.alldata[i].type === 'water' && $scope.waterChecked){
-    			$scope.markers.push($scope.alldata[i]);
-    		}
-    		if ($scope.alldata[i].type === 'wifi' && $scope.wifiChecked){
-    			$scope.markers.push($scope.alldata[i]);
-    		}
-    		if ($scope.alldata[i].type === 'toilet' && $scope.toiletChecked){
-    			$scope.markers.push($scope.alldata[i]);
-    		}
-    		if ($scope.alldata[i].type === 'recycle' && $scope.recycleChecked){
-    			$scope.markers.push($scope.alldata[i]);
-    		}
+            for (var j = 0; j < $scope.markerTypes.length; j++)
+                if ($scope.alldata[i].type === $scope.markerTypes[j].key && $scope.markerTypes[j].checked)
+                    $scope.markers.push($scope.alldata[i]);    
     	}
     }
   });
