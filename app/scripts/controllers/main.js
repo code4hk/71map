@@ -58,6 +58,8 @@ angular.module('myappApp')
 						"type" : rawdata[i].gsx$type.$t,
 						"message" : rawdata[i].gsx$address.$t,
                         "icon" : local_icons[rawdata[i].gsx$type.$t]
+
+
 					};
                     
 
