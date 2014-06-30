@@ -10,7 +10,13 @@
     "angular-resource": "1.2.6",
     "angular-cookies": "1.2.6",
     "angular-sanitize": "1.2.6",
-    "angular-route": "1.2.6"
+    "angular-route": "1.2.6",
+"leaflet-dist": "*",
+    "Leaflet.awesome-markers": "~2.0.2",
+    "leaflet.markercluster": "0.4.0",
+    "angular-leaflet-directive": "*",
+    "angularjs-nvd3-directives": "~0.0.7",
+        "leaflet-plugins":"*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
