@@ -21,22 +21,22 @@ angular.module('myappApp')
         'defaultIcon': {},
         'water': {
             iconUrl: 'images/water.png',
-            iconSize:     [19, 23], // size of the icon            
+            iconSize:     [32, 35], // size of the icon            
             iconAnchor:   [19, 22] // point of the icon which will correspond to marker's location            
         },
         'wifi': {
             iconUrl: 'images/wifi.png',
-            iconSize:     [20, 20], // size of the icon            
+            iconSize:     [32, 35], // size of the icon            
             iconAnchor:   [20, 19] // point of the icon which will correspond to marker's location            
         },
         'toilet': {
             iconUrl: 'images/toilet.png',
-            iconSize:     [20, 20], // size of the icon            
+            iconSize:     [32, 35], // size of the icon            
             iconAnchor:   [20, 19] // point of the icon which will correspond to marker's location            
         },
         'recycle': {
             iconUrl: 'images/recycle.png',
-            iconSize:     [20, 20], // size of the icon            
+            iconSize:     [32, 35], // size of the icon            
             iconAnchor:   [20, 19] // point of the icon which will correspond to marker's location            
         }
     };
