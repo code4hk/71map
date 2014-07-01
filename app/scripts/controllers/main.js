@@ -67,9 +67,9 @@ locateControl.locate();
 
     $scope.markerTypes = [
         { "key":"water", "checked": true, "name": "水機"},
-        { "key":"wifi", "checked": false, "name": "Wi-Fi"},
-        { "key":"toilet", "checked": false, "name": "廁所"},
-        { "key":"recycle", "checked": false, "name": "回收桶"}
+        { "key":"wifi", "checked": true, "name": "Wi-Fi"},
+        { "key":"toilet", "checked": true, "name": "廁所"},
+        { "key":"recycle", "checked": true, "name": "回收桶"}
     ];
 
 	$scope.alldata = [];
