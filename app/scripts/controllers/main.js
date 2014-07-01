@@ -8,6 +8,13 @@ angular.module('myappApp')
 	    zoom: 14
   	}
 
+    $scope.defaults = {
+            // crs: 'Simple',
+            reuseTiles:true,
+            maxZoom: 17,
+            minZoom:15
+    }
+
     $scope.markerTypes = [
         { "key":"water", "checked": true, "name": "水機"},
         { "key":"wifi", "checked": false, "name": "Wi-Fi"},
