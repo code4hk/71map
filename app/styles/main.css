@@ -5,3 +5,7 @@ body {
 html, body, #map {
     height: 100%;
 }
+
+.code4hk-badge{
+    z-index:998;
+}
