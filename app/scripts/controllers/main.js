@@ -22,14 +22,15 @@ promise.finally(function() {
 })
 // $scope.doSth = function() {
 leafletData.getMap('map').then(function(map) {
-    console.log(map);
-$window.L.control.locate({
+var locateControl = $window.L.control.locate({
     position: 'topleft',  // set the location of the control
     drawCircle: true,  // controls whether a circle is drawn that shows the uncertainty about the location
     follow: false,  // follow the user's location
     setView: true, // automatically sets the map view to the user's location, enabled if `follow` is true
     locateOptions: {}  // define location options e.g enableHighAccuracy: true or maxZoom: 10
 }).addTo(map);
+
+locateControl.locate();
 });
     
 // };
